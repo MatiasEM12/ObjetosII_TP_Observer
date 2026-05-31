@@ -1,4 +1,4 @@
-package ejercicio_1;
+package ejercicio_1_y_2;
 
 public interface  Observer {
 

@@ -1,4 +1,4 @@
-package ejercicio_1;
+package ejercicio_1_y_2;
 
 import java.util.ArrayList;
 
@@ -12,8 +12,10 @@ public class Main {
         observers.add(new NotificacionConsola());
 
         var medidor = new Medidor(new WeatherChannelService(urlService),observers);
-
         medidor.leerTemperatura();
+
+
+
 
     }
 }

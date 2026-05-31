@@ -1,14 +1,12 @@
-package ejercicio_1;
+package ejercicio_1_y_2;
 
 import org.json.JSONObject;
 
-import javax.print.DocFlavor;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Random;
 
 public class WeatherChannelService implements ClimaOnline {
 

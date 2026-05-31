@@ -1,4 +1,4 @@
-package ejercicio_1;
+package ejercicio_1_y_2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,4 +29,5 @@ public class Medidor {
             observer.update(data);
         }
     }
+
 }

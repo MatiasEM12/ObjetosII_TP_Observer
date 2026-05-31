@@ -1,6 +1,4 @@
-package ejercicio_1;
-
-import org.w3c.dom.CDATASection;
+package ejercicio_1_y_2;
 
 import java.io.File;
 import java.io.FileWriter;

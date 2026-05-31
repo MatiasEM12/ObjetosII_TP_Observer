@@ -1,11 +1,14 @@
-package ejercicio_1;
+package ejercicio_1_y_2;
 
-public class NotificacionConsola implements Observer{
+public class DecoradorLog extends DecoradorClima{
+    public DecoradorLog(ClimaOnline clima) {
+        super(clima);
+    }
 
-    @Override
-    public void update(String data) {
 
-        double temp = Double.parseDouble(data.replace(" c", ""));
+    public void NotificarLog() {
+
+        double temp = Double.parseDouble(this.temperatura().replace(" c", ""));
 
         if (temp < 12) {
             System.out.println("Hace frio, se encenderá la caldera");
