@@ -1,4 +1,4 @@
-package ejercicio_1_y_2;
+package ejercicio_1_2_3;
 
 public class DecoradorLog extends DecoradorClima{
     public DecoradorLog(ClimaOnline clima) {
