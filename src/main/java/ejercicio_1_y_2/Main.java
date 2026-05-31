@@ -11,11 +11,17 @@ public class Main {
         observers.add(new RegistroTemperatura( "src/main/resources/temperaturas.txt"));
         observers.add(new NotificacionConsola());
 
+        System.out.println(System.lineSeparator()+"Medidor Sin decorador"+System.lineSeparator());
+
         var medidor = new Medidor(new WeatherChannelService(urlService),observers);
         medidor.leerTemperatura();
 
 
-
-
+        System.out.println(System.lineSeparator()+"Medidor usando Decorador"+System.lineSeparator());
+        ClimaOnline clima = new DecoradorLog(new WeatherChannelService(urlService));
+        var medidor2 = new Medidor(clima,observers);
+        medidor2.leerTemperatura();
     }
+
+
 }
