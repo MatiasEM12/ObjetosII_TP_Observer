@@ -38,7 +38,7 @@ public class AgregarParticipante extends JFrame {
         this.nombre.setText("");
         this.telefono.setText("");
         this.region.setText("China");
-        this.email.setText("");
+        this.email.setText("test@mailtrap.io");
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new FlowLayout());
