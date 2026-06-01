@@ -10,8 +10,8 @@ public class GestorParticipante {
         this.registroParticipante=registro;
     }
 
-    public void guardarParticipante(String nombre, String telefono, String region) throws Exception {
-        var participante = new Participante(nombre, new Telefono(telefono), region);
+    public void guardarParticipante(String nombre, String telefono, String region,String email) throws Exception {
+        var participante = new Participante(nombre, new Telefono(telefono), region,new Email(email));
         this.registroParticipante.guardar(participante);
     }
 }

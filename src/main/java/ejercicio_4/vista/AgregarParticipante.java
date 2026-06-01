@@ -9,12 +9,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 
@@ -24,6 +19,7 @@ public class AgregarParticipante extends JFrame {
     private JTextField nombre;
     private JTextField telefono;
     private JTextField region;
+    private JTextField email;
     GestorParticipante gestorParticipante;
 
     public AgregarParticipante(GestorParticipante gestorParticipante) throws SQLException {
@@ -33,14 +29,16 @@ public class AgregarParticipante extends JFrame {
 
     private void setupUIComponents() {
         setTitle("Add Participant");
-        setSize(400, 400);
+        setSize(700, 120);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.nombre = new JTextField(10);
-        this.telefono = new JTextField(10);
-        this.region = new JTextField(10);
+        this.nombre = new JTextField(15);
+        this.telefono = new JTextField(15);
+        this.region = new JTextField(15);
+        this.email=new JTextField(15);
         this.nombre.setText("");
         this.telefono.setText("");
         this.region.setText("China");
+        this.email.setText("");
         JPanel contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         contentPane.setLayout(new FlowLayout());
@@ -50,6 +48,8 @@ public class AgregarParticipante extends JFrame {
         contentPane.add(telefono);
         contentPane.add(new JLabel("Region: "));
         contentPane.add(region);
+        contentPane.add(new JLabel("Email: "));
+        contentPane.add(email);
         JButton botonCargar = new JButton("Cargar");
         botonCargar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -67,7 +67,7 @@ public class AgregarParticipante extends JFrame {
         try {
 
 
-            gestorParticipante.guardarParticipante( nombre.getText(), telefono.getText(), region.getText());
+            gestorParticipante.guardarParticipante( nombre.getText(), telefono.getText(), region.getText(),email.getText());
             dispose();
 
         } catch (Exception ex) {

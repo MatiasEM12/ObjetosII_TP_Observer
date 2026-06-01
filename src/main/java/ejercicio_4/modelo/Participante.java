@@ -5,12 +5,13 @@ public class Participante {
     private String nombre;
     private Telefono telefono;
     private String region;
+    private Email email;
 
-    public Participante(String nombre, Telefono telefono, String region) {
+    public Participante(String nombre, Telefono telefono, String region, Email email) {
         validarNombre(nombre);
 
         validarRegion(region);
-
+        this.email=email;
         this.nombre = nombre;
         this.telefono = telefono;
         this.region = region;
@@ -32,4 +33,5 @@ public class Participante {
     public String nombre() { return nombre; }
     public String telefono() { return telefono.numero(); }
     public String region() { return region; }
+    public String email(){return email.email();}
 }
