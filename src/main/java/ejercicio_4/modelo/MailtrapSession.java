@@ -26,7 +26,7 @@ public class MailtrapSession implements SessionEmail{
                 new jakarta.mail.Authenticator() {
                     @Override
                     protected jakarta.mail.PasswordAuthentication getPasswordAuthentication() {
-                        return new jakarta.mail.PasswordAuthentication("username", "password");
+                        return new jakarta.mail.PasswordAuthentication(username, password);
                     }
                 });
     }

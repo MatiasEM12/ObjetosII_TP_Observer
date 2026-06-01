@@ -44,11 +44,12 @@ public class NotificacionEmail implements Observers ,Notificador{
     }
 
     @Override
+
     public int cantidadDeNotificaciones() {
         return this.cantNotificaciones;
     }
     @Override
     public void update(String data) {
-        System.out.println("Notificando por email: " + data);
+        notificar(data, "Se ha registrado un nuevo participante con el email: "+data);
     }
 }

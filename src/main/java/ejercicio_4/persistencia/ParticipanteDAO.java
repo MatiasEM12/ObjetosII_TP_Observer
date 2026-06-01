@@ -19,13 +19,14 @@ public class ParticipanteDAO  implements RegistroParticipante {
     @Override
     public void guardar(Participante participante) throws Exception {
         PreparedStatement st = connection.prepareStatement(
-                "insert into participantes(nombre, telefono, region) values(?,?,?)"
+                "insert into participantes(nombre, telefono, region,email) values(?,?,?,?)"
         );
 
         try {
             st.setString(1, participante.nombre());
             st.setString(2, participante.telefono());
             st.setString(3, participante.region());
+            st.setString(4, participante.email());
             st.executeUpdate();
         } finally {
             st.close();

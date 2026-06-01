@@ -9,6 +9,7 @@ import java.awt.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Main {
 
@@ -17,6 +18,8 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
+        inizializar();
+        crearTabla();
 
         EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -37,4 +40,25 @@ public class Main {
         }
     }
 
+    private static void crearTabla() {
+        try {
+            Statement st = conn.createStatement();
+
+            st.executeUpdate("""
+            CREATE TABLE participantes (
+                id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+                nombre VARCHAR(100),
+                telefono VARCHAR(50),
+                region VARCHAR(100),
+                email VARCHAR(100),
+                PRIMARY KEY (id)
+            )
+        """);
+
+            st.close();
+            System.out.println("Tabla creada");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
