@@ -1,6 +1,8 @@
 package ejercicio_1_2_3;
 
-public class NotificacionConsola implements Observer{
+import ejercicio_4.modelo.Observers;
+
+public class NotificacionConsola implements Observer {
 
     @Override
     public void update(String data) {

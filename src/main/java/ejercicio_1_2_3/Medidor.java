@@ -1,9 +1,11 @@
 package ejercicio_1_2_3;
 
+import ejercicio_4.modelo.Observers;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Medidor {
+public class Medidor  implements Observado {
 
     private List<Observer>observers = new ArrayList<>();
     private String temperatura;
@@ -21,13 +23,14 @@ public class Medidor {
     public void  leerTemperatura() {
 
         this.temperatura = this.clima.temperatura();
-        notificarObservar(temperatura);
+        notificar(temperatura);
     }
 
-    private void notificarObservar(String data){
+
+    @Override
+    public void notificar(String data) {
         for(Observer observer : this.observers){
             observer.update(data);
         }
     }
-
 }
