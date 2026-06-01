@@ -14,8 +14,8 @@ public class NotificacionEmail implements Observers ,Notificador{
     private int cantNotificaciones;
 
 
-    public NotificacionEmail(String origen) {
-        this.session = MailtrapSession.crearSession();
+    public NotificacionEmail(String origen,SessionEmail sessionEmail) {
+        this.session = sessionEmail.crearSession();
         this.origen = origen;
         this.cantNotificaciones=0;
     }

@@ -22,7 +22,7 @@ public class GestorParticipante {
 
     private ArrayList<Observers> listarObservers(){
         List<Observers> observers = new ArrayList();
-        observers.add(new NotificacionEmail(origen));
+        observers.add(new NotificacionEmail(origen, new MailtrapSession()));
 
         return (ArrayList<Observers>) observers;
     }

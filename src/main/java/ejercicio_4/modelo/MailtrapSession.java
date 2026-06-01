@@ -4,11 +4,16 @@ import jakarta.mail.Session;
 
 import java.util.Properties;
 
-public class MailtrapSession {
+public class MailtrapSession implements SessionEmail{
 
     final String username = "7745afec1e364b";
     final String password = "58c1826c0780a7";
-    public static Session crearSession() {
+
+    public MailtrapSession() {
+    }
+
+    @Override
+    public Session crearSession() {
 
         Properties prop = new Properties();
 
