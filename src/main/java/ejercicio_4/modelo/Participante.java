@@ -4,22 +4,23 @@ package ejercicio_4.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Participante implements Observado {
+public class Participante extends Observado {
     private String nombre;
     private Telefono telefono;
     private String region;
     private Email email;
-    private List<Observers> observers = new ArrayList<>();
+
 
     public Participante(String nombre, Telefono telefono, String region, Email email, List<Observers> observers) {
+        super(observers);
         validarNombre(nombre);
-
         validarRegion(region);
+
         this.email=email;
         this.nombre = nombre;
         this.telefono = telefono;
         this.region = region;
-        this.observers=observers;
+
 
         notificar(this.email.email());
     }
@@ -42,10 +43,4 @@ public class Participante implements Observado {
     public String region() { return region; }
     public String email(){return email.email();}
 
-    @Override
-    public void notificar(String data) {
-        for (Observers observer : observers) {
-            observer.update(data);
-        }
-    }
 }

@@ -1,4 +1,4 @@
-package ejercicio_1_2_3;
+package ejercicio_1_2;
 
 import org.json.JSONObject;
 

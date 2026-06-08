@@ -1,6 +1,4 @@
-package ejercicio_1_2_3;
-
-import ejercicio_4.modelo.Observers;
+package ejercicio_1_2;
 
 public class NotificacionConsola implements Observer {
 

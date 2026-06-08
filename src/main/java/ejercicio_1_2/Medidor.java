@@ -1,9 +1,7 @@
-package ejercicio_1_2_3;
-
-import ejercicio_4.modelo.Observers;
+package ejercicio_1_2;
 
 import java.util.ArrayList;
-import java.util.List;
+
 //extends
 public class Medidor  extends  Observado {
 
