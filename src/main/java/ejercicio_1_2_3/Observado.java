@@ -1,6 +1,19 @@
 package ejercicio_1_2_3;
 
-public interface Observado {
+import java.util.ArrayList;
+import java.util.List;
 
-    public void notificar(String data);
+public abstract class Observado {
+
+    private List<Observer>observers = new ArrayList<>();
+
+
+    public Observado (List<Observer>observers){
+        this.observers = observers;
+    }
+    public void notificar(String data){
+        for(Observer observer : this.observers){
+            observer.update(data);
+        }
+    }
 }
